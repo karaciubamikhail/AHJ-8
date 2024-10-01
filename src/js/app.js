@@ -1,6 +1,4 @@
-// TODO: write code here
-import { CardForm } from "./card-form";
+import SubmitPage from './SubmitPage';
 
-let form = new CardForm(document.querySelector(".container"));
-form.bindToDom();
-form.formEvent();
+const page = new SubmitPage();
+page.init();

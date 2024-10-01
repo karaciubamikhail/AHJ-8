@@ -1,3 +1,245 @@
-body {
-    color: #999;
+@import 'reset';
+@import 'fonts';
+
+.conteiner {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nickname {
+  padding: 40px;
+  font-family: 'Fractal', open-sans;
+  border: solid 1px rgb(224, 152, 70);
+  border-radius: 20px;
+  text-align: center;
+
+}
+
+.nickname__title {
+  font-size: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nickname__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.nickname__input {
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 5px;
+  border: solid 1px rgb(179, 117, 26);
+}
+
+.nickname__button {
+  font-size: 18px;
+  border-radius: 10px;
+  align-self: center;
+  margin-top: 5px;
+  padding: 8px;
+  max-width: 50%;
+}
+
+.error-message {
+  padding-top: 5px;
+  color: rgb(204, 41, 41);
+  position: absolute;
+  font-weight: bold;
+}
+
+
+/* основное окно чата */
+.chat {
+  font-family: 'Play', open-sans;
+  padding-top: 30px;
+  display: flex;
+}
+
+.chat__btn {
+  display: none;
+}
+
+.chat__users {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  position: relative;
+  top: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid black;
+  border-right: none;
+  padding: 15px;
+  height: max-content;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.chat__users--you {
+  color: rgba(255, 60, 0, 0.603);
+}
+
+.chat__user {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.chat__img {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+}
+
+.chat__name {
+  padding-left: 10px;
+}
+
+.chat__main {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 20px;
+  width: 500px;
+  border: 1px solid black;
+}
+
+.chat__messages {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.message {
+  padding: 10px;
+}
+
+.message--you {
+  align-self: flex-end;
+  color: rgb(177, 54, 54);
+}
+
+.message__title--you {
+  color: rgba(28, 173, 65, 0.856);
+}
+
+.message__title {
+  display: flex;
+}
+
+.message__name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.message__date {
+  align-self: center;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.chat__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat__text-send {
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.chat__btn-send {
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 5px;
+  align-self: flex-end;
+  padding: 10px;
+  max-width: 100px;
+  justify-self: flex-end;
+}
+
+.msgStatus {
+  font-family: Play, open-sans;
+  font-size: 12px;
+  color: rgb(145, 145, 145);
+}
+
+
+@media (min-width: 375px) and (max-width: 798px) {
+  .chat {
+    padding: 0;
+  }
+
+  .chat__users {
+    justify-content: flex-start;
+    transition: right 1s, opacity 0.8s, visibility 1.5s;
+    visibility: hidden;
+    opacity: 0.1;
+    top: 40vh;
+    right: 100vw;
+    flex-direction: row;
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    border-right: 1px solid black;
+    border-radius: 20px;
+    width: 100vw;
+  }
+
+  .chat__user-conteiner {
+    margin-left: 20px;
+  }
+
+  .chat__user--active {
+    transition: right 1s, opacity 1s, visibility 1.5s;
+    visibility: visible;
+    right: 0vh;
+    opacity: 1;
+  }
+
+  .chat__main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    padding: 30px;
+    background-image: url(../assets/img/background-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: none;
+  }
+
+  .chat__messages {
+    height: 90vh;
+  }
+
+  .chat__btn {
+    visibility: hidden;
+    display: block;
+    width: 25px;
+    height: max-content;
+    align-self: center;
+  }
+
+  .chat__btn--open {
+    top: 43vh;
+    position: absolute;
+    bottom: 400px;
+    left: 0;
+  }
+
+  .chat__btn--active {
+    visibility: visible;
+  }
+
 }
