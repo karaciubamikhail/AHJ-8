@@ -1,7 +1,7 @@
 export class Chat {
     constructor(element){
         this.element = element;
-        this.wsAdress = ('ws://localhost:3000/ws');
+        this.wsAdress = ('ws://ahj-8back.onrender.com/ws');
         this.user 
     }
     static createElement (tag,className,content){
@@ -31,7 +31,7 @@ export class Chat {
             user.appendChild(userName);
             userList.appendChild(user);*/
             let data = JSON.stringify({name:windowAddinput.value})
-            let usersadd = fetch('http://localhost:3000/new-user',{
+            let usersadd = fetch('https://ahj-8back.onrender.com/new-user',{
                 method:'post',
                 body:data,
                 headers: {
@@ -53,7 +53,7 @@ export class Chat {
         })
     }
     async getUsers(){
-        let res = await fetch('http://localhost:3000/get-user');
+        let res = await fetch('https://ahj-8back.onrender.com/get-user');
         let users = await res.json()
         users.forEach(element => {
             const userList = this.element.querySelector('.chat-users')
