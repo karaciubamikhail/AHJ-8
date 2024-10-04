@@ -1,4 +1,5 @@
-import SubmitPage from './SubmitPage';
+// TODO: write code here
+import { Chat } from "./chat";
 
-const page = new SubmitPage();
-page.init();
+let chat = new Chat(document.querySelector(".chat"));
+chat.start();
