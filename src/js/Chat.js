@@ -1,7 +1,7 @@
 export class Chat {
     constructor(element){
         this.element = element;
-        this.wsAdress = ('ws://ahj-8back.onrender.com/ws');
+        this.wsAdress = ('wss://ahj-8back.onrender.com/ws');
         this.user 
     }
     static createElement (tag,className,content){
@@ -25,7 +25,10 @@ export class Chat {
         windowAdd.appendChild(windowAddBtn);
         chat.appendChild(windowAdd);
         windowAddBtn.addEventListener('click',()=>{
-            /*const userList = this.element.querySelector('.chat-users')
+            if(windowAddinput.value = ''){
+                return;
+            }else{
+ /*const userList = this.element.querySelector('.chat-users')
             const user = Chat.createElement('div','chat-users__user');
             const userName = Chat.createElement('p','chat-users__user__name',windowAddinput.value);
             user.appendChild(userName);
@@ -50,6 +53,7 @@ export class Chat {
                     windowAdd.appendChild(windowAddError );
                 }
             })
+            }
         })
     }
     async getUsers(){
