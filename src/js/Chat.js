@@ -25,6 +25,9 @@ export class Chat {
         windowAdd.appendChild(windowAddBtn);
         chat.appendChild(windowAdd);
         windowAddBtn.addEventListener('click',()=>{
+            if(windowAddinput.value == ''){
+                return;
+            }else{
  /*const userList = this.element.querySelector('.chat-users')
             const user = Chat.createElement('div','chat-users__user');
             const userName = Chat.createElement('p','chat-users__user__name',windowAddinput.value);
@@ -50,6 +53,7 @@ export class Chat {
                     windowAdd.appendChild(windowAddError );
                 }
             })
+            }
         })
     }
     async getUsers(){
